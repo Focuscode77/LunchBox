@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 app.get('/', (req, res) => {
 
-    res.send('Hello World');
+    res.send('Hello World api is working!');
 
 
 });
@@ -14,7 +14,7 @@ app.get('/api/courses', (req, res) => {
 });
 
 
-app.listen(3000, () => console.log('Listening on port 3000...'));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
 
 
 
